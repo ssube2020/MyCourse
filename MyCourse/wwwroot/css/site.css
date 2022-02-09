@@ -1,0 +1,118 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 16px;
+  }
+
+    .nav-item {
+        margin-left: 50%;
+        transform: translateX(-50%);
+        width: max-content;
+    }
+}
+
+.carinfo {
+    color: white;
+    font-style: italic;
+    font-size: x-large;
+    margin-left: 15px;
+    
+}
+
+.cruds {
+    margin-top: 245px;
+    margin-left: 10px;
+    margin-left: 20%;
+}
+
+.shmard {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    border-radius: 4%;
+}
+
+.add-btn {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.searchitms {
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+
+.searchitms > a {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 16%;
+    margin-top: 5px;
+}
+
+.searchitms > input {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    width: 32%;
+    border-style: outset;
+    border-width: initial;
+    border-color: black;
+    border-radius: 5px !important;
+}
+
+@media screen and (max-width: 576px) {
+    .ul-navbar {
+        margin-left: 0% !important;
+    }
+
+    .login-register-ul {
+        text-align: center !important;
+    }
+}
+
+.card-registration {
+    border-radius: 15px;
+    width: 400px;
+    padding-left: 20px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.car-dropdown {
+    border-radius: 5px;
+    height: 40px;
+}
+
+.create-form {
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding-top: 10px;
+    padding-bottom: 15px;
+    border-radius: 10px;
+    border-style: ridge;
+    border-width: thin;
+}
+
+.create-brand {
+    border-radius: 5px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}

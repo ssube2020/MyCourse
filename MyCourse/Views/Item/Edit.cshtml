@@ -1,0 +1,50 @@
+﻿@model MyCourse.Models.Item
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1> რედაქტირება  </h1>
+
+<h4> პროდუქტი  </h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" asp-controller="Item" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="id" />
+
+            <div class="form-group">
+                <label class="control-label"> ბრენდი: </label>
+                <select asp-for="categoryId" asp-items="@(ViewData["dropdown"] as IEnumerable<SelectListItem>)" >
+                    @*<option> -- აირჩიეთ ბრენდი -- </option>*@
+                </select>
+                <span asp-validation-for="categoryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="borrower" class="control-label"></label>
+                <input asp-for="borrower" class="form-control" />
+                <span asp-validation-for="borrower" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="lender" class="control-label"></label>
+                <input asp-for="lender" class="form-control" />
+                <span asp-validation-for="lender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="itemname" class="control-label"></label>
+                <input asp-for="itemname" class="form-control" />
+                <span asp-validation-for="itemname" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-2">
+                <input type="submit" value="შენახვა" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-2">
+    <a class="btn btn-secondary" asp-action="Index"> უკან დაბრუნება </a>
+</div>
+

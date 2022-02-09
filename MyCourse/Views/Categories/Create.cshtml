@@ -1,0 +1,36 @@
+﻿@model MyCourse.Models.Category
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3 class = "text-center">დამატება</h3>
+<div class="row">
+    <div class="create-brand col-md-4 card">
+        <form asp-action="Create" method="post" style="height: 270px;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+
+                <h6 asp-for="category" class="control-label"> მანქანის ბრენდი </h6>
+                <input asp-for="category" class="w-auto mt-2 form-control" />
+                <span asp-validation-for="category" class="mt-2 text-danger"> </span>
+            </div>
+            <div class="mt-2 form-group">
+                <input type="submit" value="დამატება" class="btn btn-primary" />
+            </div>
+
+            <div class="mt-2">
+                <a class="btn btn-danger" asp-action="Index"> უკან დაბრუნება </a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+
+    @*@{ <partial name="_ValidationScriptsPartial" />}*@
+    @*<script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script> *@
+
+}
+

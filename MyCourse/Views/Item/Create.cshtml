@@ -1,0 +1,60 @@
+﻿@model MyCourse.ViewModels.ItemVM
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h3 class="text-center"> მანქანის დამატება </h3>
+<div class="row">
+    <div class="create-form card col-md-4">
+        <form asp-action="Create" asp-controller="Item" method="post">
+
+
+           @* <ul>
+                <% foreach (var student in ViewData["Student"] as List<string>)
+                    { %>
+                <li><%: student%></li>
+                <% } %>
+            </ul>*@
+
+            <div class="d-grid form-group">
+                <label class="control-label"> ბრენდი: </label>
+                <select class="mt-2 car-dropdown" asp-for="item.categoryId" asp-items="@(ViewData["dropdown"] as IEnumerable<SelectListItem>)" >
+                    
+                </select>
+                <span asp-validation-for="item.categoryId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label mt-2"> მოდელი </label>
+                <input asp-for="item.borrower" class="mt-2 form-control" />
+                @Html.ValidationMessageFor(m => m.item.borrower, "", new { @class = "text-danger" })
+            </div>
+            <div class="form-group">
+                <label asp-for="item.lender" class="control-label"> საწვავის ტიპი </label>
+                <input asp-for="item.lender" class="mt-2 form-control" />
+                <span asp-validation-for="item.lender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="item.itemname" class="control-label"> საჭე </label>
+                <input asp-for="item.itemname" class="mt-2 form-control"/>
+                <span asp-validation-for="item.itemname" class="text-danger"></span>
+            </div>
+
+            <div class="d-flex">
+                <div class="mt-2 form-group" style="margin-top: 5px;">
+                    <input type="submit" value=" დამატება " class="btn btn-primary">
+                </div>             
+                <div style="margin-left: 25px;">
+                    <a class="btn btn-danger mt-2" href="/"> უკან დაბრუნება  </a>
+                </div>        
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div asp-validation-summary="All" class="text-danger"></div>
+
+
+

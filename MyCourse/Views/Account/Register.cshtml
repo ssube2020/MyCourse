@@ -1,0 +1,91 @@
+﻿@model MyCourse.ViewModels.RegisterVM
+
+                
+
+@*<div class="">
+    
+    <form asp-action="Login" asp-controller="Account" method="post">
+        <div>
+            <label asp-for="Email"> </label> 
+            <div class="col-md-10">
+                <input asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"> </span>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="Password"> </label> 
+            <div class="col-md-10">
+                <input asp-for="Password" />
+                <p asp-validation-for="Password" class="text-danger"> </p>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="rememberme"> დამახსოვრება </label>
+            <input asp-for="rememberme" />
+        </div>
+        <input type="submit" class="btn btn-success" value="Log in" />
+    </form>
+</div>*@
+
+             
+<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+    <p class="h3"> რეგისტრაცია </p>
+    <form asp-action="Register" asp-controller="Account" method="post" class="reg-form">
+
+                  <div>
+                    <label asp-for="Name"> სახელი </label>
+                    <div class="col-md-10">
+                      <input type="text" asp-for="Name"/>
+                      <span asp-validation-for="Name" class="text-danger"> </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label asp-for="Email"> მეილი </label>
+                    <div class="col-md-10">
+                      <input type="text" asp-for="Email"/>
+                      <span asp-validation-for="Email" class="text-danger"> </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label asp-for="Password"> პაროლი </label>
+                    <div class="col-md-10">
+                      <input type="password" asp-for="Password"/>
+                      <span asp-validation-for="Password" class="text-danger"> </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <label asp-for="ConfirmPassword"> გაიმეორე პაროლი </label>
+                    <div class="col-md-10">
+                      <input type="password" asp-for="ConfirmPassword"/>
+                      <span asp-validation-for="ConfirmPassword" class="text-danger"> </span>
+                    </div>
+                  </div>
+
+                  <div>
+                    <div class="col-md-12 mt-2">
+                      <label asp-for="Role">როლი: </label>
+                      <select asp-for="Role" asp-items="MyCourse.Helpers.Helper.GetRoles()">
+
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="mt-2">
+                    <button type="submit" class="btn btn-success btn-sm"> რეგისტრაცია </button>
+                  </div>
+                </form>
+</div>
+
+
+@section Scripts {
+    <partial name = "_ValidationScriptsPartial" />
+}
+
+
+
+

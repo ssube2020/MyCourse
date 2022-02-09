@@ -1,0 +1,37 @@
+﻿@model MyCourse.Models.Item
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h3> დარწმუნებული ხართ რომ ნამდვილად გსურთ ამ პროდუქტის წაშლა? </h3>
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            <p> გამსესხებელი </p> 
+        </dt>
+        <dd class = "col-sm-10">
+            <p> @Model.borrower </p>
+        </dd>
+        <dt class = "col-sm-2">
+            <p> მსესხებელი </p>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.lender)
+        </dd>
+        <dt class = "col-sm-2">
+            <p> ნივთი </p>
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.itemname)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete" asp-controller="Item" method="post">
+        <input type="hidden" asp-for="id" />
+        <input type="submit" value="წაშლა" class="btn btn-danger" /> |
+        <a asp-action="Index"> უკან დაბრუნება </a>
+    </form>
+</div>

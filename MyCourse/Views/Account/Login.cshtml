@@ -1,0 +1,31 @@
+﻿@model MyCourse.ViewModels.LoginVM
+
+
+<div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+    <p class="h3"> შესვლა </p>
+    <form asp-action="Login" asp-controller="Account" method="post">
+        <div>
+            <label asp-for="Email"> მეილი </label> 
+            <div class="col-md-10">
+                <input asp-for="Email" />
+                <span asp-validation-for="Email" class="text-danger"> </span>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="Password"> პაროლი </label> 
+            <div class="col-md-10">
+                <input asp-for="Password" />
+                <p asp-validation-for="Password" class="text-danger"> </p>
+            </div>
+        </div>
+
+        <div>
+            <label asp-for="rememberme"> დამახსოვრება </label>
+            <input asp-for="rememberme" />
+        </div>
+        <input type="submit" class="btn btn-success mt-2" value="შესვლა" />
+
+    </form>
+</div>
+

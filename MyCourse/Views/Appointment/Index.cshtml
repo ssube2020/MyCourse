@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MyCourse.ViewModels.DoctorVM>
+
+
+
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+    @if(User.IsInRole(MyCourse.Helpers.Helper.doctor))
+    {
+        <label> აირჩიე ექიმი </label>
+
+        @Html.DropDownList("adminID", new SelectList(ViewBag.doctors, "id", "Name"), new { @class = "selectitem" });
+        @*<select> 
+            <option> აირჩიე ექიმი </option>
+            <option> @((ViewBag.doctors as List<MyCourse.ViewModels.DoctorVM>).First().Name) </option>
+            @foreach(var doctor in ViewBag.doctors as List<MyCourse.ViewModels.DoctorVM>)
+            {
+                <option> @doctor.Name </option>
+            }
+        </select>*@
+
+        <div id="calendar" class="mt-2"> 
+        
+        </div>
+    }
+    
+</body>
+</html>
+
+

@@ -1,0 +1,33 @@
+﻿@model IEnumerable<MyCourse.Models.Category>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h3> მანქანის ბრენდები </h3>
+
+<p>
+    <a class="btn btn-primary" asp-action="Create"> ბრენდის დამატება </a>
+</p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>
+                @*@Html.DisplayNameFor(model => model.category)*@ ბრენდი 
+            </th>
+            <th class="text-center"> მოქმედება </th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.category)
+            </td>
+            <td class="text-center">
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id"> წაშლა </a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
